@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AffichageController;
+use Illuminate\Support\Facades\App;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,5 +25,9 @@ Route::get('/equipages',[AffichageController::class,'equipages'])->name('equipag
 Route::get('/technologie',[AffichageController::class,'technologie'])->name('technologie');
 Route::get('/technologie/page2',[AffichageController::class,'technologiePage2'])->name('technologiePage2');
 Route::get('/technologie/page3',[AffichageController::class,'technologiePage3'])->name('technologiePage3');
+
+Route::get('/{locale}',[AffichageController::class,'language'], function(string $locale){
+    App::setLocale($locale);
+});
 
 

@@ -260,3 +260,19 @@
   opacity: 1;
 }
 }
+#language {
+  display: flex;
+  flex-direction: row;
+ 
+  top: 0px;
+  right: 0px;
+  padding: 0.5em 0.7em;
+
+  width: 40px;
+  height: auto;
+  z-index: 99;
+  }
+#language a{
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+}

@@ -28,10 +28,14 @@
               but hey, it's pure CSS magic.
               -->
               <ul id="menu">
-                <a href="/"><li>00 ACCUEIL</li></a>
+                <a href="/"><li>00 @lang('ACCUEIL')</li></a>
                 <a href='{{route("moon")}}'><li>01 DESTINATION</li></a>
                 <a href='{{route("equipages")}}'><li>02 EQUIPAGE</li></a>
                 <a href='{{route("technologie")}}'><li>03 TECHNOLOGIE</li></a>
+                <div id="language">
+                  <a href="#" title="English"><img src="http://upload.wikimedia.org/wikipedia/commons/0/07/Icons-flag-uk.png" alt="English" /></a>
+                  <a href="#" title="French"><img src="https://cdn1.iconfinder.com/data/icons/famfamfam_flag_icons/fr.png" alt="French" /></a>
+                </div>
               </ul>
             </div>
         </nav><!-- Primary Navigation Menu -->
@@ -39,28 +43,32 @@
     <div class=background_header>
         <div class=container_header>
                 <!-- Navigation Links -->
-                <a href='/'>
+                <a aria-label="Accueil" href='/'>
                     <div class=box_nav>
-                       <span class=bold>00</span> ACCUEIL
+                       <span class=bold>00</span> {{ __('ACCUEIL') }}
                     </div>               
                 </a>  
                  <!-- Lien pour la création d'une tâche -->
-                    <a href='{{route("moon")}}''>
+                    <a aria-label="Destination" href='{{route("moon")}}'>
                     <div class=box_nav>
                         <span class=bold>01</span> DESTINATION
                     </div>    
                     </a>
                     <!-- Lien pour la liste des tâches -->
-                <a href='{{route("equipages")}}'>
+                <a aria-label="Equipage" href='{{route("equipages")}}'>
                     <div class=box_nav>
-                        <span class=bold>02</span> EQUIPAGE
+                        <span class=bold>02</span> {{ __('EQUIPAGE') }}
                     </div>    
                 </a>       
-                <a href='{{route("technologie")}}'>
+                <a aria-label="Technologie" href='{{route("technologie")}}'>
                     <div class=box_nav>    
                         <span class=bold>03</span> TECHNOLOGIE
                     </div>    
-                </a>      
+                </a>     
+                <div id="language">
+                  <a href="en" id="englishButton" title="English"><img src="http://upload.wikimedia.org/wikipedia/commons/0/07/Icons-flag-uk.png" alt="English" /></a>
+                  <a href="fr" id="frenchButton" title="French"><img src="https://cdn1.iconfinder.com/data/icons/famfamfam_flag_icons/fr.png" alt="French" /></a>
+                </div>
         </div>                
     </div>   
 </nav>

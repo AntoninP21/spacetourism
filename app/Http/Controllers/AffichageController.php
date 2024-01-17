@@ -42,4 +42,8 @@ class AffichageController extends Controller
     {
         return view('technologieCapsule',['body' => 'container_technologie']);
     }
+    public function language()
+    {
+        return view('welcome',['body' => 'container_welcome']);
+    }
 }
