@@ -12,6 +12,6 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100&family=Bellefair&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100&display=swap" rel="stylesheet">
-<link href="../css/header.css" rel="stylesheet" type="text/css" />
-<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="{{ asset('/css/header.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('/css/style.css') }}" rel="stylesheet" type="text/css" />
 <script src="../js/app.js"></script>

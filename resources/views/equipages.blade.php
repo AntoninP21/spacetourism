@@ -28,7 +28,7 @@
          Douglas Gerald Hurley est un ingénieur américain, un ancien pilote du Corps des Marines et un ancien astronaute de la NASA. Il s'est lancé dans l'espace pour la troisième fois en tant que commandant du vaissaux Crew Dragon Demo-2.
          </div></div>
          <div class=right_equipage>
-            <img src="../images/DouglasHurley.png" alt="DouglasHurley">
+            <img src="{{ asset('/images/DouglasHurley.png') }}" alt="DouglasHurley">
          </div>
 </div>
    </div>   
@@ -49,7 +49,7 @@
          Mark Richard Shuttleworth est le fondateur et PDG de Canonical, la société derrière le système d'exploitation Ubuntu basé sur Linux. Shuttleworth est devenu le premier sud-africain à voyager dans l'espace en tant que touriste spatial.         </div>
       </div>
       <div class=right_equipage>
-         <img src="../images/MarkShuttleworth.png" alt="MarkShuttleworth">
+         <img src="{{ asset('/images/MarkShuttleworth.png') }}" alt="MarkShuttleworth">
       </div>
    </div>
 </div> </div>
@@ -69,7 +69,7 @@
          Pilote du premier vol opérationnel du SpaceX Crew Dragon à destination de la Station Spatiale Internationale. Glover est commandant dans la marine américaine, où il pilote un F/A-18. Il a été membre de l'équipage de l'Expedition 64 et a servi comme ingénieur de vol des systèmes de station.         </div>
       </div>
       <div class=right_equipage>
-         <img src="../images/Victor Glover.png" alt="Victor Glover">
+         <img src="{{ asset('/images/Victor Glover.png') }}" alt="Victor Glover">
       </div>
    </div>
 </div>  
@@ -91,7 +91,7 @@
                         Anousheh Ansari est une ingénieure Irano-Américaine               et cofondatrice de Prodea Systems. Ansari était la             quatrième touriste de l'espace autofinancée, la             première femme autofinancée à se rendre à l'ISS, et            la première iranienne dans l'espace.         </div>
                      </div>
                      <div class=right_equipage>
-                        <img src="../images/Anousheh Ansari.png"              alt="AnoushehAnsari">
+                        <img src="{{ asset('/images/Anousheh Ansari.png') }}"alt="AnoushehAnsari">
                      </div>
                   </div>
                </div>

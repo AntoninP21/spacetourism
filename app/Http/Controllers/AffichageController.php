@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App;
 class AffichageController extends Controller
 {
     public function index()
@@ -42,8 +42,9 @@ class AffichageController extends Controller
     {
         return view('technologieCapsule',['body' => 'container_technologie']);
     }
-    public function language()
+    public function language(Request $request)
     {
+        App::setLocale($request->locale);
         return view('welcome',['body' => 'container_welcome']);
     }
 }

@@ -14,20 +14,18 @@ use Illuminate\Support\Facades\App;
 |
 */
 
+Route::group(['prefix' => '/{locale}', 'middleware' => 'language'],function () {
+    Route::get('/home',[AffichageController::class,'index'])->name('home');
+    Route::get('/planets/moon',[AffichageController::class,'moon'])->name('moon');
+    Route::get('/planets/mars',[AffichageController::class,'mars'])->name('mars');
+    Route::get('/planets/europa',[AffichageController::class,'europa'])->name('europa');
+    Route::get('/planets/titan',[AffichageController::class,'titan'])->name('titan');
 
-Route::get('/',[AffichageController::class,'index'])->name('home');
-Route::get('/planets/moon',[AffichageController::class,'moon'])->name('moon');
-Route::get('/planets/mars',[AffichageController::class,'mars'])->name('mars');
-Route::get('/planets/europa',[AffichageController::class,'europa'])->name('europa');
-Route::get('/planets/titan',[AffichageController::class,'titan'])->name('titan');
-
-Route::get('/equipages',[AffichageController::class,'equipages'])->name('equipages');
-Route::get('/technologie',[AffichageController::class,'technologie'])->name('technologie');
-Route::get('/technologie/page2',[AffichageController::class,'technologiePage2'])->name('technologiePage2');
-Route::get('/technologie/page3',[AffichageController::class,'technologiePage3'])->name('technologiePage3');
-
-Route::get('/{locale}',[AffichageController::class,'language'], function(string $locale){
-    App::setLocale($locale);
+    Route::get('/equipages',[AffichageController::class,'equipages'])->name('equipages');
+    Route::get('/technologie',[AffichageController::class,'technologie'])->name('technologie');
+    Route::get('/technologie/page2',[AffichageController::class,'technologiePage2'])->name('technologiePage2');
+    Route::get('/technologie/page3',[AffichageController::class,'technologiePage3'])->name('technologiePage3');
 });
+
 
 

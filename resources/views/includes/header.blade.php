@@ -2,7 +2,7 @@
 <nav class=header>
     <div class=box_logo>
             <a href='/'>
-                <img src="\images\Logo.png" alt="logo"/>
+                <img src="{{ asset('\images\Logo.png') }}" alt="logo"/>
             </a>
     </div>
     <nav role="navigation">
@@ -28,10 +28,10 @@
               but hey, it's pure CSS magic.
               -->
               <ul id="menu">
-                <a href="/"><li>00 @lang('ACCUEIL')</li></a>
-                <a href='{{route("moon")}}'><li>01 DESTINATION</li></a>
-                <a href='{{route("equipages")}}'><li>02 EQUIPAGE</li></a>
-                <a href='{{route("technologie")}}'><li>03 TECHNOLOGIE</li></a>
+                <a href='{{route("home",["locale"=>App::getLocale()])}}'><li>00 @lang('ACCUEIL')</li></a>
+                <a href='{{route("moon",["locale"=>App::getLocale()])}}'><li>01 DESTINATION</li></a>
+                <a href='{{route("equipages",["locale"=>App::getLocale()])}}'><li>02 EQUIPAGE</li></a>
+                <a href='{{route("technologie",["locale"=>App::getLocale()])}}'><li>03 TECHNOLOGIE</li></a>
                 <div id="language">
                   <a href="#" title="English"><img src="http://upload.wikimedia.org/wikipedia/commons/0/07/Icons-flag-uk.png" alt="English" /></a>
                   <a href="#" title="French"><img src="https://cdn1.iconfinder.com/data/icons/famfamfam_flag_icons/fr.png" alt="French" /></a>
@@ -43,31 +43,31 @@
     <div class=background_header>
         <div class=container_header>
                 <!-- Navigation Links -->
-                <a aria-label="Accueil" href='/'>
+                <a aria-label="Accueil" href='{{route("home",["locale"=>App::getLocale()])}}'>
                     <div class=box_nav>
                        <span class=bold>00</span> {{ __('ACCUEIL') }}
                     </div>               
                 </a>  
                  <!-- Lien pour la création d'une tâche -->
-                    <a aria-label="Destination" href='{{route("moon")}}'>
+                    <a aria-label="Destination" href='{{route("moon",["locale"=>App::getLocale()])}}'>
                     <div class=box_nav>
                         <span class=bold>01</span> DESTINATION
                     </div>    
                     </a>
                     <!-- Lien pour la liste des tâches -->
-                <a aria-label="Equipage" href='{{route("equipages")}}'>
+                <a aria-label="Equipage" href='{{route("equipages",["locale"=>App::getLocale()])}}'>
                     <div class=box_nav>
                         <span class=bold>02</span> {{ __('EQUIPAGE') }}
                     </div>    
                 </a>       
-                <a aria-label="Technologie" href='{{route("technologie")}}'>
+                <a aria-label="Technologie" href='{{route("technologie",["locale"=>App::getLocale()])}}'>
                     <div class=box_nav>    
                         <span class=bold>03</span> TECHNOLOGIE
                     </div>    
                 </a>     
                 <div id="language">
-                  <a href="en" id="englishButton" title="English"><img src="http://upload.wikimedia.org/wikipedia/commons/0/07/Icons-flag-uk.png" alt="English" /></a>
-                  <a href="fr" id="frenchButton" title="French"><img src="https://cdn1.iconfinder.com/data/icons/famfamfam_flag_icons/fr.png" alt="French" /></a>
+                  <a href="{{route(Route::current()->getName(), ['locale' => 'en' ])}}" id="englishButton" title="English"><img src="http://upload.wikimedia.org/wikipedia/commons/0/07/Icons-flag-uk.png" alt="English" /></a>
+                  <a href="{{route(Route::current()->getName(), ['locale' => 'fr' ])}}" id="frenchButton" title="French"><img src="https://cdn1.iconfinder.com/data/icons/famfamfam_flag_icons/fr.png" alt="French" /></a>
                 </div>
         </div>                
     </div>   

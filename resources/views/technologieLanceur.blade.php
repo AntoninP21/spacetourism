@@ -6,9 +6,9 @@
       </div>
       <div class=ensemble_technologie>
          <div class=boutons_technologie>
-            <a href='{{route("technologie")}}' class=bouton_techno_selected><div class=numero_boutons>1</div></a>
-            <a href='{{route("technologiePage2")}}' class=bouton_techno><div class=numero_boutons>2</div></a>
-            <a href='{{route("technologiePage3")}}' class=bouton_techno><div class=numero_boutons>3</div></a>
+            <a href='{{route("technologie",["locale"=>App::getLocale()])}}' class=bouton_techno_selected><div class=numero_boutons>1</div></a>
+            <a href='{{route("technologiePage2",["locale"=>App::getLocale()])}}' class=bouton_techno><div class=numero_boutons>2</div></a>
+            <a href='{{route("technologiePage3",["locale"=>App::getLocale()])}}' class=bouton_techno><div class=numero_boutons>3</div></a>
          </div>
          <div class=texte_technologie>
             <div class=titre_technologie>
@@ -19,7 +19,7 @@
             </div>
          </div>
          <div class=image_technologie>
-            <img src="../images/Soyuz_TMA-5_launch.jpg" alt="Launch1">
+            <img src="{{ asset('/images/Soyuz_TMA-5_launch.jpg') }}" alt="Launch1">
          </div>
       </div>
    </div>

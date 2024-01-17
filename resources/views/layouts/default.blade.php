@@ -1,6 +1,6 @@
 <!doctype html>
 <html>
-<html xmlns:og= »http://ogp.me/ns# »>
+<!-- <html xmlns:og= »http://ogp.me/ns# »> -->
 <head>
    @include('includes.head')
 </head>
