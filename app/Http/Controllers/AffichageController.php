@@ -8,30 +8,38 @@ class AffichageController extends Controller
 {
     public function index()
     {
-        return view('welcome');
+        return view('welcome',['body' => 'container_welcome']);
     }
     public function moon()
     {
-        return view('planetsMoon');
+        return view('planetsMoon',['body' => 'container_planet']);
     }
     public function equipages()
     {
-        return view('equipages');
+        return view('equipages',['body' => 'container_equipage']);
     }
     public function technologie()
     {
-        return view('technologie');
+        return view('technologieLanceur',['body' => 'container_technologie']);
     }
     public function mars()
     {
-        return view('planetsMars');
+        return view('planetsMars',['body' => 'container_planet']);
     }
     public function europa()
     {
-        return view('planetsEurope');
+        return view('planetsEurope',['body' => 'container_planet']);
     }
     public function titan()
     {
-        return view('planetsTitan');
+        return view('planetsTitan',['body' => 'container_planet']);
+    }
+    public function technologiePage2()
+    {
+        return view('technologieSpatioport',['body' => 'container_technologie']);
+    }
+    public function technologiePage3()
+    {
+        return view('technologieCapsule',['body' => 'container_technologie']);
     }
 }

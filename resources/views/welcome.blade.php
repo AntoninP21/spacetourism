@@ -15,9 +15,11 @@
                Soyons objectifs; si vous voulez aller dans l'espace, vous pouvez aller véritablement dans le véritable espace et non juste planer sur le bord de celui-ci. Eh bien, asseyez-vous parceque nous allons vous donner une expérience vraiment extraordinaire!
             </div>          
          </div>
+         <a class=bouton_lien href='{{route("moon")}}'>
          <div class=bouton_welcome>
                   EXPLORER
          </div>
+         </a>
    </div>
 </main>
 @stop

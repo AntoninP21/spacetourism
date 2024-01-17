@@ -3,7 +3,7 @@
 <head>
    @include('includes.head')
 </head>
-<body class="container_welcome">
+<body class="{{$body}}">
 <div>
    <header class="row">
        @include('includes.header')

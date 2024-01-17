@@ -1,4 +1,4 @@
-@extends('layouts.layoutTechnologie')
+@extends('layouts.default')
 @section('content')
    <div class=main_technologie>
       <div class=titre_lancement>
@@ -6,9 +6,9 @@
       </div>
       <div class=ensemble_technologie>
          <div class=boutons_technologie>
-            <a href="" class=bouton_techno_selected><div class=numero_boutons>1</div></a>
-            <a href="" class=bouton_techno><div class=numero_boutons>2</div></a>
-            <a href="" class=bouton_techno><div class=numero_boutons>3</div></a>
+            <a href='{{route("technologie")}}' class=bouton_techno_selected><div class=numero_boutons>1</div></a>
+            <a href='{{route("technologiePage2")}}' class=bouton_techno><div class=numero_boutons>2</div></a>
+            <a href='{{route("technologiePage3")}}' class=bouton_techno><div class=numero_boutons>3</div></a>
          </div>
          <div class=texte_technologie>
             <div class=titre_technologie>

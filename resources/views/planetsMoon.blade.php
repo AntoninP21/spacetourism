@@ -1,4 +1,4 @@
-@extends('layouts.destination')
+@extends('layouts.default')
 @section('content')
 <main class=main_planet>
    <div class=soustitre_planet>

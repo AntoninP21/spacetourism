@@ -22,4 +22,7 @@ Route::get('/planets/titan',[AffichageController::class,'titan'])->name('titan')
 
 Route::get('/equipages',[AffichageController::class,'equipages'])->name('equipages');
 Route::get('/technologie',[AffichageController::class,'technologie'])->name('technologie');
+Route::get('/technologie/page2',[AffichageController::class,'technologiePage2'])->name('technologiePage2');
+Route::get('/technologie/page3',[AffichageController::class,'technologiePage3'])->name('technologiePage3');
+
 

@@ -1,4 +1,4 @@
-@extends('layouts.layoutEquipage')
+@extends('layouts.default')
 @section('content')
 <div id="slider-wrapper">
   <div class="inner-wrapper">
