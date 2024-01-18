@@ -6,18 +6,18 @@
    <div class=contenu_welcome>
         <div class=text_welcome>
             <div class=soustitre_welcome>
-               DONC VOUS VOULEZ VOYAGER DANS 
+               @lang('DONC VOUS VOULEZ VOYAGER DANS') 
             </div>
             <div class=titre_welcome>
-               L'ESPACE
+               @lang("L'ESPACE")
             </div>
             <div class=corps_welcome>
-               Soyons objectifs; si vous voulez aller dans l'espace, vous pouvez aller véritablement dans le véritable espace et non juste planer sur le bord de celui-ci. Eh bien, asseyez-vous parceque nous allons vous donner une expérience vraiment extraordinaire!
+               @lang("Soyons objectifs; si vous voulez aller dans l'espace, vous pouvez aller véritablement dans le véritable espace et non juste planer sur le bord de celui-ci. Eh bien, asseyez-vous parceque nous allons vous donner une expérience vraiment extraordinaire!")
             </div>          
          </div>
          <a class=bouton_lien aria-label="bouton explorez" href='{{route("moon",["locale"=>App::getLocale()])}}'>
          <div class=bouton_welcome>
-                  EXPLORER
+                  @lang('EXPLORER')
          </div>
          </a>
    </div>

@@ -2,7 +2,7 @@
 @section('content')
    <div class=main_technologie>
       <div class=titre_lancement>
-         <span class=numero>03</span>LANCEMENT SPATIAL 101
+         <span class=numero>03</span>@lang('LANCEMENT SPATIAL') 101
       </div>
       <div class=ensemble_technologie>
          <div class=boutons_technologie>
@@ -12,10 +12,10 @@
          </div>
          <div class=texte_technologie>
             <div class=titre_technologie>
-               LE SPATIOPORT
+               @lang('LE SPATIOPORT')
             </div>
             <div class=corps_technologie>
-            Un spatioport ou cosmodrome est un site de lancement (ou de réception) d'engins spatiaux, par analogie avec le port maritime pour les navires ou l'aéroport pour les aéronefs. Basé au célèbre Cap Canaveral, notre spatioport est idéalement situé pour profiter de la rotation de la Terre pour le lancement.        
+            @lang("Un spatioport ou cosmodrome est un site de lancement (ou de réception) d'engins spatiaux, par analogie avec le port maritime pour les navires ou l'aéroport pour les aéronefs. Basé au célèbre Cap Canaveral, notre spatioport est idéalement situé pour profiter de la rotation de la Terre pour le lancement.")        
             </div>
          </div>
          <div class=image_technologie>

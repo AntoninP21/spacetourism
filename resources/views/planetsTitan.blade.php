@@ -3,7 +3,7 @@
 <main class=main_planet>
    <div class=soustitre_planet>
       <div class=titre_destination>
-         <span class=numero>01</span>CHOISISSEZ VOTRE DESTINATION
+         <span class=numero>01</span>@lang('CHOISISSEZ VOTRE DESTINATION')
       </div>   
       <div class=contenu_planet>
          <img class=planet_affiche src="{{ asset('/images/Titan.png ') }}" alt=titan>
@@ -14,7 +14,7 @@
                 <!-- Navigation Links -->
                 <a href='{{route("moon",["locale"=>App::getLocale()])}}'>
                     <div class=box_nav_planet>
-                       LUNE
+                       @lang('LUNE')
                     </div>               
                 </a>  
                  <!-- Lien pour la création d'une tâche -->
@@ -26,7 +26,7 @@
                     <!-- Lien pour la liste des tâches -->
                 <a href='{{route("europa",["locale"=>App::getLocale()])}}'>
                     <div class=box_nav_planet>
-                        EUROPE
+                        @lang('EUROPE')
                     </div>    
                 </a>       
                 <a href='{{route("titan",["locale"=>App::getLocale()])}}'>
@@ -39,17 +39,18 @@
                   TITAN
                </div>
                <div class=corps_planet>
-               La seule lune connue pour avoir une atmosphère dense autre que la Terre, Titan est comme une maison loin de la laison (et juste quelques centaines de degrés plus froid !). En bonus, vous pouvez contemplez des vues saisissantes des anneaux de Saturne.               <div class=separateur_planet>
+               @lang("La seule lune connue pour avoir une atmosphère dense autre que la Terre, Titan est comme une maison loin de la laison (et juste quelques centaines de degrés plus froid !). En bonus, vous pouvez contemplez des vues saisissantes des anneaux de Saturne.") </div>
+               <div class=separateur_planet>
 
                </div>     
             <div class=infos_planet>
                <div class=titre_info_planet>
-                  DISTANCE
+                  @lang('DISTANCE')
                   <div class=info_planet>1.6 TM</div>
                </div>
                <div class=titre_info_planet>
-                  DURÉE
-                  <div class=info_planet>7 ANS</div>
+                  @lang('DURÉE')
+                  <div class=info_planet>7 @lang('ANS')</div>
                </div>
             </div>
          </div>

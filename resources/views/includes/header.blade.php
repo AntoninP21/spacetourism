@@ -30,8 +30,8 @@
               <ul id="menu">
                 <a href='{{route("home",["locale"=>App::getLocale()])}}'><li>00 @lang('ACCUEIL')</li></a>
                 <a href='{{route("moon",["locale"=>App::getLocale()])}}'><li>01 DESTINATION</li></a>
-                <a href='{{route("equipages",["locale"=>App::getLocale()])}}'><li>02 EQUIPAGE</li></a>
-                <a href='{{route("technologie",["locale"=>App::getLocale()])}}'><li>03 TECHNOLOGIE</li></a>
+                <a href='{{route("equipages",["locale"=>App::getLocale()])}}'><li>02 @lang('EQUIPAGE')</li></a>
+                <a href='{{route("technologie",["locale"=>App::getLocale()])}}'><li>03 @lang('TECHNOLOGIE')</li></a>
                 <div id="language">
                   <a href="#" title="English"><img src="http://upload.wikimedia.org/wikipedia/commons/0/07/Icons-flag-uk.png" alt="English" /></a>
                   <a href="#" title="French"><img src="https://cdn1.iconfinder.com/data/icons/famfamfam_flag_icons/fr.png" alt="French" /></a>
@@ -62,7 +62,7 @@
                 </a>       
                 <a aria-label="Technologie" href='{{route("technologie",["locale"=>App::getLocale()])}}'>
                     <div class=box_nav>    
-                        <span class=bold>03</span> TECHNOLOGIE
+                        <span class=bold>03</span> {{ __('TECHNOLOGIE') }}
                     </div>    
                 </a>     
                 <div id="language">

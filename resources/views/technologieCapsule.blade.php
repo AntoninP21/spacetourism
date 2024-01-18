@@ -2,7 +2,7 @@
 @section('content')
    <div class=main_technologie>
       <div class=titre_lancement>
-         <span class=numero>03</span>LANCEMENT SPATIAL 101
+         <span class=numero>03</span>@lang('LANCEMENT SPATIAL') 101
       </div>
       <div class=ensemble_technologie>
          <div class=boutons_technologie>
@@ -12,10 +12,10 @@
          </div>
          <div class=texte_technologie>
             <div class=titre_technologie>
-               LA CAPSULE SPATIALE
+               @lang("LA CAPSULE SPATIALE")
             </div>
             <div class=corps_technologie>
-            Une capsule spatiale est un engin spatial habitable qui utilise une capsule à corps émoussé pour rentrer dans l'atmosphère terrestre sans ailes. Notre capsule est l'endroit où vous passerez votre temps pendant le vol. Il comprend une salle de gym, un cinéma et de nombreuses autres activités pour vous divertir           
+            @lang("Une capsule spatiale est un engin spatial habitable qui utilise une capsule à corps émoussé pour rentrer dans l'atmosphère terrestre sans ailes. Notre capsule est l'endroit où vous passerez votre temps pendant le vol. Il comprend une salle de gym, un cinéma et de nombreuses autres activités pour vous divertir")           
           </div>
          </div>
          <div class=image_technologie>

@@ -3,10 +3,10 @@
 <main class=main_planet>
    <div class=soustitre_planet>
       <div class=titre_destination>
-         <span class=numero>01</span>CHOISISSEZ VOTRE DESTINATION
+         <span class=numero>01</span>@lang('CHOISISSEZ VOTRE DESTINATION')
       </div>   
       <div class=contenu_planet>
-         <img class=planet_affiche src=../images/Europa.png alt=europa>
+         <img class=planet_affiche src="{{ asset('/images/Europa.png ') }}" alt=europa>
       </div>
    </div>
         <div class=text_planet>           
@@ -14,7 +14,7 @@
                 <!-- Navigation Links -->
                 <a href='{{route("moon",["locale"=>App::getLocale()])}}'>
                     <div class=box_nav_planet>
-                       LUNE
+                       @lang('LUNE')
                     </div>               
                 </a>  
                  <!-- Lien pour la création d'une tâche -->
@@ -26,7 +26,7 @@
                     <!-- Lien pour la liste des tâches -->
                 <a href='{{route("europa",["locale"=>App::getLocale()])}}'>
                     <div class=box_nav_planet_selected>
-                        EUROPE
+                        @lang('EUROPE')
                     </div>    
                 </a>       
                 <a href='{{route("titan",["locale"=>App::getLocale()])}}'>
@@ -36,21 +36,21 @@
                 </a>      
             </div>                
                <div class=titre_planet>
-                  EUROPE
+                  @lang('EUROPE')
                </div>
                <div class=corps_planet>
-               La plus petite des quatre lunes galiléennes en orbite autour de Jupiter, Europe est le rêve des amoureux de  l'hiver. Sa surface glacée est parfaite pour faire un peu de patin à glace, du curling, du hockey ou tout simplement pour vous détentre dans votre confortable chalet hivernal.               </div>     
+               @lang("La plus petite des quatre lunes galiléennes en orbite autour de Jupiter, europe est le rêve des amoureux de  l'hiver. Sa surface glacée est parfaite pour faire un peu de patin à glace, du curling, du hockey ou tout simplement pour vous détentre dans votre confortable chalet hivernal.")           </div>     
                <div class=separateur_planet>
 
                </div>     
             <div class=infos_planet>
                <div class=titre_info_planet>
-                  DISTANCE
+                  @lang('DISTANCE')
                   <div class=info_planet>628 GM</div>
                </div>
                <div class=titre_info_planet>
-                  DURÉE
-                  <div class=info_planet>3 ANS</div>
+                  @lang('DURÉE')
+                  <div class=info_planet>3 @lang('ANS')</div>
                </div>
             </div>
          </div>

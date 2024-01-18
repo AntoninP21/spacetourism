@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\App;
 |
 */
 
+Route::get('/', function () {
+    return redirect('en/home');
+});
+
 Route::group(['prefix' => '/{locale}', 'middleware' => 'language'],function () {
     Route::get('/home',[AffichageController::class,'index'])->name('home');
     Route::get('/planets/moon',[AffichageController::class,'moon'])->name('moon');

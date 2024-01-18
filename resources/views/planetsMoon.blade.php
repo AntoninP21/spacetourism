@@ -3,10 +3,10 @@
 <main class=main_planet>
    <div class=soustitre_planet>
       <div class=titre_destination>
-         <span class=numero>01</span>CHOISISSEZ VOTRE DESTINATION
+         <span class=numero>01</span>@lang('CHOISISSEZ VOTRE DESTINATION')
       </div>   
       <div class=contenu_planet>
-         <img class=planet_affiche src="{{ asset('/images/moon.png') }}" alt=lune>
+         <img class=planet_affiche src="{{ asset('/images/moon.png') }}" alt=@lang('LUNE')>
       </div>
    </div>
         <div class=text_planet>           
@@ -14,7 +14,7 @@
                 <!-- Navigation Links -->
                 <a href='{{route("moon",["locale"=>App::getLocale()])}}'>
                     <div class=box_nav_planet_selected>
-                       LUNE
+                       @lang('LUNE')
                     </div>               
                 </a>  
                  <!-- Lien pour la création d'une tâche -->
@@ -26,7 +26,7 @@
                     <!-- Lien pour la liste des tâches -->
                 <a href='{{route("europa",["locale"=>App::getLocale()])}}'>
                     <div class=box_nav_planet>
-                        EUROPE
+                        @lang('EUROPE')
                     </div>    
                 </a>       
                 <a href='{{route("titan",["locale"=>App::getLocale()])}}'>
@@ -36,22 +36,22 @@
                 </a>      
             </div>                
                <div class=titre_planet>
-                  LUNE
+                  @lang('LUNE')
                </div>
                <div class=corps_planet>
-               Voyez notre planète comme vous ne l'avez jamais vue auparavant. Un parfait voayage de détente pour vous aider à prendre du recul et revenir requinquer. Pendant que vous y êtes, plangez-vous dans l'histoire en visitant les sites d'atterrissage de Luna 2 et Apollo 11.
+               @lang("Voyez notre planète comme vous ne l'avez jamais vue auparavant. Un parfait voayage de détente pour vous aider à prendre du recul et revenir requinquer. Pendant que vous y êtes, plangez-vous dans l'histoire en visitant les sites d'atterrissage de Luna 2 et Apollo 11.")
                </div>     
                <div class=separateur_planet>
 
                </div>     
             <div class=infos_planet>
                <div class=titre_info_planet>
-                  DISTANCE
+                  @lang('DISTANCE')
                   <div class=info_planet>384 000 KM</div>
                </div>
                <div class=titre_info_planet>
-                  DURÉE
-                  <div class=info_planet>3 JOURS</div>
+                  @lang('DURÉE')
+                  <div class=info_planet>3 @lang('JOURS')</div>
                </div>
             </div>
          </div>

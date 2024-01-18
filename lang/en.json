@@ -206,5 +206,50 @@
     "Yes": "Yes",
     "You are receiving this email because we received a password reset request for your account.": "You are receiving this email because we received a password reset request for your account.",
     "ACCUEIL": "HOME",
-    "EQUIPAGE": "STAFF"
+    "EQUIPAGE": "STAFF",
+    "TECHNOLOGIE": "TECHNOLOGY",
+    "DONC VOUS VOULEZ VOYAGER DANS": "SO YOU WANT TO TRAVEL THROUGH",
+    "L'ESPACE": "SPACE",
+    "Soyons objectifs; si vous voulez aller dans l'espace, vous pouvez aller véritablement dans le véritable espace et non juste planer sur le bord de celui-ci. Eh bien, asseyez-vous parceque nous allons vous donner une expérience vraiment extraordinaire!": "Let's be objective; if you want to go into space, you can actually go into real space and not just hover on the edge of it. Well, sit back because we are going to give you a truly extraordinary experience!",
+    "EXPLORER": "EXPLORE",
+    "LANCEMENT SPATIAL": "SPACE LAUNCH",
+    "LE SPATIOPORT": "THE SPACEPORT",
+    "Un spatioport ou cosmodrome est un site de lancement (ou de réception) d'engins spatiaux, par analogie avec le port maritime pour les navires ou l'aéroport pour les aéronefs. Basé au célèbre Cap Canaveral, notre spatioport est idéalement situé pour profiter de la rotation de la Terre pour le lancement.": "A spaceport or cosmodrome is a launch (or reception) site for spacecraft, by analogy with the seaport for ships or the airport for aircraft. Based at the famous Cape Canaveral, our spaceport is ideally located to take advantage of the Earth's rotation for launch.",
+    "LE LANCEUR": "THE LAUNCHER",
+    "Un lanceur ou une fusée porteuse est un véhicule propulsé par fusée utilisé pour transporter une charge utile de la surface de la Terre vers l'espace, habituellement vers l'orbite terrestre ou au-delà. Notre fusée WEB-X est la plus puissante en service. Debout à 150 mètres de hauteur, elle donne lieu à un impressionnant spectacle sur le pas de tir !": "A launch vehicle or carrier rocket is a rocket-powered vehicle used to transport a payload from the Earth's surface to space, usually to Earth's orbit or beyond. Our WEB-X rocket is the most powerful in service. Standing at 150 meters high, it gives rise to an impressive spectacle on the shooting range!",
+    "LA CAPSULE SPATIALE": "THE SPACE CAPSULE",
+    "Une capsule spatiale est un engin spatial habitable qui utilise une capsule à corps émoussé pour rentrer dans l'atmosphère terrestre sans ailes. Notre capsule est l'endroit où vous passerez votre temps pendant le vol. Il comprend une salle de gym, un cinéma et de nombreuses autres activités pour vous divertir": "A space capsule is a habitable spacecraft that uses a blunt-bodied capsule to reenter Earth's atmosphere without wings. Our capsule is where you will spend your time during the flight. It includes a gym, cinema and many other activities to keep you entertained",
+    "CHOISISSEZ VOTRE DESTINATION": "CHOOSE YOUR DESTINATION",
+    "LUNE": "MOON",
+    "EUROPE": "EUROPA",
+    "La seule lune connue pour avoir une atmosphère dense autre que la Terre, Titan est comme une maison loin de la laison (et juste quelques centaines de degrés plus froid !). En bonus, vous pouvez contemplez des vues saisissantes des anneaux de Saturne.": "The only moon known to have a dense atmosphere other than Earth, Titan is like a home away from home (and just a few hundred degrees colder!). As a bonus, you can enjoy stunning views of Saturn's rings.",
+    "DISTANCE": "DISTANCE",
+    "DURÉE": "DURATION",
+    "ANS": "YEARS",
+    "JOURS": "DAYS",
+    "Voyez notre planète comme vous ne l'avez jamais vue auparavant. Un parfait voayage de détente pour vous aider à prendre du recul et revenir requinquer. Pendant que vous y êtes, plangez-vous dans l'histoire en visitant les sites d'atterrissage de Luna 2 et Apollo 11.": "See our planet like you've never seen it before. A perfect relaxing trip to help you take a step back and come back to life. While you're there, immerse yourself in history by visiting the sites of landing of Luna 2 and Apollo 11.",
+    "N'oubliez pas vos bottes de randonnée. Vous en aurez besoin pour gravir le mont Olympus, la plus haute montagne planétaire dans notre système solaire. Il fait deux fois et demie la taille de l'Everest !": "Don't forget your hiking boots. You'll need them to climb Mount Olympus, the highest planetary mountain in our solar system. It's two and a half times the size of Everest!",
+    "MOIS": "MONTHS",
+    "La plus petite des quatre lunes galiléennes en orbite autour de Jupiter, europe est le rêve des amoureux de  l'hiver. Sa surface glacée est parfaite pour faire un peu de patin à glace, du curling, du hockey ou tout simplement pour vous détentre dans votre confortable chalet hivernal.": "The smallest of the four Galilean moons orbiting Jupiter, Europe is a winter lover's dream. Its icy surface is perfect for a little ice skating, curling, hockey or just relaxing in your cozy winter cabin.",
+    "RENCONTREZ L'ÉQUIPAGE": "MEET THE CREW",
+    "COMMANDANT": "CAPTAIN",
+    "Douglas Gerald Hurley est un ingénieur américain, un ancien pilote du Corps des Marines et un ancien astronaute de la NASA. Il s'est lancé dans l'espace pour la troisième fois en tant que commandant du vaissaux Crew Dragon Demo-2.": "Douglas Gerald Hurley is an American engineer, former Marine Corps pilot, and former NASA astronaut. He launched into space for the third time as commander of the Crew Dragon Demo-2.",
+    "SPÉCIALISTE DE MISSION": "MISSION SPECIALIST",
+    "Mark Richard Shuttleworth est le fondateur et PDG de Canonical, la société derrière le système d'exploitation Ubuntu basé sur Linux. Shuttleworth est devenu le premier sud-africain à voyager dans l'espace en tant que touriste spatial.": "Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind the Linux-based Ubuntu operating system. Shuttleworth became the first South African to travel to space as a space tourist.",
+    "PILOTE": "PILOT",
+    "Pilote du premier vol opérationnel du SpaceX Crew Dragon à destination de la Station Spatiale Internationale. Glover est commandant dans la marine américaine, où il pilote un F/A-18. Il a été membre de l'équipage de l'Expedition 64 et a servi comme ingénieur de vol des systèmes de station.": "Pilot of the first operational flight of the SpaceX Crew Dragon to the International Space Station. Glover is a commander in the United States Navy, where he flies an F/A-18. He was a member of the Expedition 64 crew and served as a station systems flight engineer.",
+    "INGÉNIEURE DE VOL": "FLIGHT ENGINEER",
+    "Anousheh Ansari est une ingénieure Irano-Américaine et cofondatrice de Prodea Systems. Ansari était la quatrième touriste de l'espace autofinancée, la première femme autofinancée à se rendre à l'ISS, et la première iranienne dans l'espace.": "Anousheh Ansari is an Iranian-American engineer and co-founder of Prodea Systems. Ansari was the fourth self-funded space tourist, the first self-funded woman to travel to the ISS, and the first Iranian in space."
+
+
+
+
+
+
+
+
+
+
+
+
 }
