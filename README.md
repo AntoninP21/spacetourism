@@ -8,6 +8,6 @@ Afin d'obtenir le code source du site:
 
 * Entrez dans le dossier où vous souhaitez mettre le code source
 
-* Tapez ```https://github.com/AntoninP21/spacetourism.git```
+* Tapez ```git clone https://github.com/AntoninP21/spacetourism.git```
 
 * Lancez votre serveur local et ouvrez le dossier **spacetourism**.
