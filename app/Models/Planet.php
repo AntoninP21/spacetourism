@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Planet extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'id',
+        'title',
+        'detail',
+        'distance',
+        'duree',
+        'updated_at',
+        'created_at'
+    ];
 }

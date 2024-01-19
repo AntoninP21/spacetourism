@@ -33,8 +33,8 @@
                 <a href='{{route("equipages",["locale"=>App::getLocale()])}}'><li>02 @lang('EQUIPAGE')</li></a>
                 <a href='{{route("technologie",["locale"=>App::getLocale()])}}'><li>03 @lang('TECHNOLOGIE')</li></a>
                 <div id="language">
-                  <a href="#" title="English"><img src="http://upload.wikimedia.org/wikipedia/commons/0/07/Icons-flag-uk.png" alt="English" /></a>
-                  <a href="#" title="French"><img src="https://cdn1.iconfinder.com/data/icons/famfamfam_flag_icons/fr.png" alt="French" /></a>
+                  <a href="{{route(Route::current()->getName(), ['locale' => 'en' ])}}" title="English"><img src="http://upload.wikimedia.org/wikipedia/commons/0/07/Icons-flag-uk.png" alt="English" /></a>
+                  <a href="{{route(Route::current()->getName(), ['locale' => 'fr' ])}}" title="French"><img src="https://cdn1.iconfinder.com/data/icons/famfamfam_flag_icons/fr.png" alt="French" /></a>
                 </div>
               </ul>
             </div>
