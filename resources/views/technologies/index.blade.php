@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            @lang('Planets List')
+            @lang('technologies List')
         </h2>
     </x-slot>
     <div class="container flex justify-center mx-auto">
@@ -19,20 +19,20 @@
                     </tr>
                   </thead>
                   <tbody class="bg-white">
-                    @foreach($planets as $planet)
+                    @foreach($technologies as $technologie)
                       <tr class="whitespace-nowrap">
-                        <td class="px-4 py-4 text-sm text-gray-500">{{ $planet->id }}</td>
-                        <td class="px-4 py-4">{{ $planet->title }}</td>
-                        <x-link-button href="{{ route('planets.show', $planet->id) }}">
+                        <td class="px-4 py-4 text-sm text-gray-500">{{ $technologie->id }}</td>
+                        <td class="px-4 py-4">{{ $technologie->title }}</td>
+                        <x-link-button href="{{ route('technologies.show', $technologie->id) }}">
                             @lang('Show')
                         </x-link-button>
-                        <x-link-button href="{{ route('planets.edit', $planet->id) }}">
+                        <x-link-button href="{{ route('technologies.edit', $technologie->id) }}">
                             @lang('edit')
                         </x-link-button>
-                        <x-link-button onclick="event.preventDefault(); document.getElementById('destroy{{ $planet->id }}').submit();">
+                        <x-link-button onclick="event.preventDefault(); document.getElementById('destroy{{ $technologie->id }}').submit();">
                             @lang('Delete')
                         </x-link-button>
-                        <form id="destroy{{ $planet->id }}" action="{{ route('planets.destroy', $planet->id) }}" method="POST" style="display: none;">
+                        <form id="destroy{{ $technologie->id }}" action="{{ route('technologies.destroy', $technologie->id) }}" method="POST" style="display: none;">
                             @csrf
                             @method('DELETE')
                         </form>

@@ -4,6 +4,9 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AffichageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PlanetController;
+use App\Http\Controllers\TechnologieController;
+use App\Http\Controllers\CrewController;
+
 
 
 /*
@@ -45,6 +48,8 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::resource('planets', PlanetController::class)->middleware('auth');
+Route::resource('crews', CrewController::class)->middleware('auth');
+Route::resource('technologies', TechnologieController::class)->middleware('auth');
 
 
 require __DIR__.'/auth.php';

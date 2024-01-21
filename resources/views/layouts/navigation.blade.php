@@ -23,6 +23,29 @@
                         {{ __('Planets list') }}
                     </x-nav-link>
                 </div>
+                <!-- Lien pour la création d'une tâche -->
+                <div class="hidden space-x-8 sm:-my-px sm:ml-20 sm:flex">
+                    <x-nav-link :href="route('crews.create')" :active="request()->routeIs('crews.create')">
+                        {{ __('Create a crew') }}
+                    </x-nav-link>
+                </div>
+                    <!-- Lien pour la liste des tâches -->
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('crews.index')" :active="request()->routeIs('crews.index')">
+                        {{ __('Crew list') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-20 sm:flex">
+                    <x-nav-link :href="route('technologies.create')" :active="request()->routeIs('technologies.create')">
+                        {{ __('Create a technologie') }}
+                    </x-nav-link>
+                </div>
+                    <!-- Lien pour la liste des tâches -->
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('technologies.index')" :active="request()->routeIs('technologies.index')">
+                        {{ __('Technologie list') }}
+                    </x-nav-link>
+                </div>
             </div>
 
             <!-- Settings Dropdown -->

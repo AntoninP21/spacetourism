@@ -37,6 +37,7 @@ class PlanetController extends Controller
         $planet->detail = $request->detail;
         $planet->distance = $request->distance;
         $planet->duree = $request->duree;
+        $planet->image_path = $request->image_path;
         $planet->save();
         return back()->with('message', "The planet has been created!");
     }
@@ -54,7 +55,7 @@ class PlanetController extends Controller
      */
     public function edit(Planet $planet)
     {
-        return view('tasks.edit', compact('planet'));
+        return view('planets.edit', compact('planet'));
     }
 
     /**
@@ -70,7 +71,7 @@ class PlanetController extends Controller
         $planet->detail = $request->detail;
         $planet->distance = $request->distance;
         $planet->duree = $request->duree;
-        $planet->state = $request->has('state');
+        $planet->image_path = $request->image_path;
         $planet->save();
         return back()->with('message', "The planet has been edited!");     
     }
@@ -81,5 +82,6 @@ class PlanetController extends Controller
     public function destroy(Planet $planet)
     {
         $planet->delete();
+        return view("/dashboard");
     }
 }

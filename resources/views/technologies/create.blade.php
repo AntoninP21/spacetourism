@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Create a planet') }}
+            {{ __('Create a technologie') }}
         </h2>
     </x-slot>
     <x-planets-card>
@@ -11,7 +11,7 @@
                 {{ session('message') }}
             </div>
         @endif
-        <form action="{{ route('planets.store') }}" method="post">
+        <form action="{{ route('technologies.store') }}" method="post">
             @csrf
             <!-- Titre -->
             <div>
@@ -25,20 +25,8 @@
                 <x-textarea class="block mt-1 w-full" id="detail" name="detail">{{ old('detail') }}</x-textarea>
                 <x-input-error :messages="$errors->get('detail')" class="mt-2" />
             </div>
-            <!-- distance -->
-            <div>
-                <x-input-label for="distance" :value="__('Distance')" />
-                <x-text-input  id="distance" class="block mt-1 w-full" type="text" name="distance" :value="old('distance')" required autofocus />
-                <x-input-error :messages="$errors->get('distance')" class="mt-2" />
-            </div>
-            <!-- duree -->
-            <div>
-                <x-input-label for="duree" :value="__('Duree')" />
-                <x-text-input  id="duree" class="block mt-1 w-full" type="text" name="duree" :value="old('duree')" required autofocus />
-                <x-input-error :messages="$errors->get('duree')" class="mt-2" />
-            </div>
             <div class="row mb-3">
-                <x-input-label for="image_path" :value="__('Planet Pic')" />
+                <x-input-label for="image_path" :value="__('Technologie Pic')" />
                 <x-text-input  id="image_path" class="block mt-1 w-full" type="file" name="image_path" :value="old('image_path')" required autofocus />
                 <x-input-error :messages="$errors->get('image_path')" class="mt-2" />
             </div>
