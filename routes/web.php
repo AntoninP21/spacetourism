@@ -30,7 +30,7 @@ Route::group(['prefix' => '/{locale}', 'middleware' => 'language'],function () {
     Route::get('/planets/mars',[AffichageController::class,'mars'])->name('mars');
     Route::get('/planets/europa',[AffichageController::class,'europa'])->name('europa');
     Route::get('/planets/titan',[AffichageController::class,'titan'])->name('titan');
-
+    Route::get('/planets/{planetName}',[AffichageController::class,'planet'])->name('planet');
     Route::get('/equipages',[AffichageController::class,'equipages'])->name('equipages');
     Route::get('/technologie',[AffichageController::class,'technologie'])->name('technologie');
     Route::get('/technologie/page2',[AffichageController::class,'technologiePage2'])->name('technologiePage2');

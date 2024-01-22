@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App;
+use App\Models\Planet;
 class AffichageController extends Controller
 {
     public function index()
@@ -12,7 +13,8 @@ class AffichageController extends Controller
     }
     public function moon()
     {
-        return view('planetsMoon',['body' => 'container_planet']);
+        $planets = Planet::all();
+        return view('planetsMoon',['body' => 'container_planet'])->with('planets', $planets);
     }
     public function equipages()
     {
@@ -33,6 +35,11 @@ class AffichageController extends Controller
     public function titan()
     {
         return view('planetsTitan',['body' => 'container_planet']);
+    }
+    public function planet(Request $request)
+    {
+        $planet = Planet::where('title', '=', $request->planetName)->firstOrFail();
+        return view('planets', compact('planet'),['body' => 'container_technologie']);
     }
     public function technologiePage2()
     {

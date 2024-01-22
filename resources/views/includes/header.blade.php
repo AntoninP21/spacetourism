@@ -1,4 +1,12 @@
-
+@php
+$param=Route::current()->parameters();
+unset($param["locale"]);
+$paramObject=new ArrayObject($param);
+$en=$paramObject->getArrayCopy();
+$fr=$paramObject->getArrayCopy();
+$en["locale"]="en";
+$fr["locale"]="fr";
+@endphp
 <nav class=header>
     <div class=box_logo>
             <a href='/'>
@@ -33,8 +41,8 @@
                 <a href='{{route("equipages",["locale"=>App::getLocale()])}}'><li>02 @lang('EQUIPAGE')</li></a>
                 <a href='{{route("technologie",["locale"=>App::getLocale()])}}'><li>03 @lang('TECHNOLOGIE')</li></a>
                 <div id="language">
-                  <a href="{{route(Route::current()->getName(), ['locale' => 'en' ])}}" title="English"><img src="http://upload.wikimedia.org/wikipedia/commons/0/07/Icons-flag-uk.png" alt="English" /></a>
-                  <a href="{{route(Route::current()->getName(), ['locale' => 'fr' ])}}" title="French"><img src="https://cdn1.iconfinder.com/data/icons/famfamfam_flag_icons/fr.png" alt="French" /></a>
+                  <a href="{{route(Route::current()->getName(), $en)}}" title="English"><img src="http://upload.wikimedia.org/wikipedia/commons/0/07/Icons-flag-uk.png" alt="English" /></a>
+                  <a href="{{route(Route::current()->getName(), $fr)}}" title="French"><img src="https://cdn1.iconfinder.com/data/icons/famfamfam_flag_icons/fr.png" alt="French" /></a>
                 </div>
               </ul>
             </div>
@@ -66,8 +74,9 @@
                     </div>    
                 </a>     
                 <div id="language">
-                  <a href="{{route(Route::current()->getName(), ['locale' => 'en' ])}}" id="englishButton" title="English"><img src="http://upload.wikimedia.org/wikipedia/commons/0/07/Icons-flag-uk.png" alt="English" /></a>
-                  <a href="{{route(Route::current()->getName(), ['locale' => 'fr' ])}}" id="frenchButton" title="French"><img src="https://cdn1.iconfinder.com/data/icons/famfamfam_flag_icons/fr.png" alt="French" /></a>
+
+                  <a href="{{route(Route::current()->getName(), $en)}}" id="englishButton" title="English"><img src="http://upload.wikimedia.org/wikipedia/commons/0/07/Icons-flag-uk.png" alt="English" /></a>
+                  <a href="{{route(Route::current()->getName(), $fr)}}" id="frenchButton" title="French"><img src="https://cdn1.iconfinder.com/data/icons/famfamfam_flag_icons/fr.png" alt="French" /></a>
                 </div>
         </div>                
     </div>   

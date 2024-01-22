@@ -30,7 +30,7 @@
          <div class=right_equipage>
             <img src="{{ asset('/images/DouglasHurley.png') }}" alt="DouglasHurley">
          </div>
-</div>
+      </div>
    </div>   
 </div>
       <div class="slide" href=""><div class=equipage2>

@@ -7,7 +7,7 @@
          <span class=numero>01</span>@lang('CHOISISSEZ VOTRE DESTINATION')
       </div>   
       <div class=contenu_planet>
-         <img class=planet_affiche src="{{ asset('/images/moon.png') }}" alt=@lang('LUNE')>
+         <img class=planet_affiche src="data:image/png;base64,{{ $planet->image_path }}" alt="{{ $planet->title }}">
       </div>
    </div>
         <div class=text_planet>           
@@ -44,10 +44,10 @@
                @endforeach
             </div>                
                <div class=titre_planet>
-                  @lang('LUNE')
+                  @lang("$planet->title")
                </div>
                <div class=corps_planet>
-               @lang("Voyez notre planète comme vous ne l'avez jamais vue auparavant. Un parfait voayage de détente pour vous aider à prendre du recul et revenir requinquer. Pendant que vous y êtes, plangez-vous dans l'histoire en visitant les sites d'atterrissage de Luna 2 et Apollo 11.")
+               @lang("$planet->detail")
                </div>     
                <div class=separateur_planet>
 
@@ -55,11 +55,11 @@
             <div class=infos_planet>
                <div class=titre_info_planet>
                   @lang('DISTANCE')
-                  <div class=info_planet>384 000 KM</div>
+                  <div class=info_planet>{{ $planet->distance }}</div>
                </div>
                <div class=titre_info_planet>
                   @lang('DURÉE')
-                  <div class=info_planet>3 @lang('JOURS')</div>
+                  <div class=info_planet>{{ $planet->duree }}</div>
                </div>
             </div>
          </div>

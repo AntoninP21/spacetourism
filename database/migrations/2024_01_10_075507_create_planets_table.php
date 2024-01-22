@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('detail');
             $table->string('distance');
             $table->string('duree');
-            $table->binary('image_path')->nullable();
+            $table->longText('image_path')->nullable();
             $table->timestamps();
         });
     }

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Planet;
+use App\Http\Controllers\Input;
+
 class PlanetController extends Controller
 {
     /**
@@ -37,7 +39,13 @@ class PlanetController extends Controller
         $planet->detail = $request->detail;
         $planet->distance = $request->distance;
         $planet->duree = $request->duree;
-        $planet->image_path = $request->image_path;
+        if ($request->hasFile('image_path')) {
+            // Read the contents of the image file and encode it to base64
+            $imageContents = file_get_contents($request->file('image_path')->path());
+            $base64Image = base64_encode($imageContents);
+    
+            $planet->image_path = $base64Image;
+        }
         $planet->save();
         return back()->with('message', "The planet has been created!");
     }
