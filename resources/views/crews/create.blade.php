@@ -11,8 +11,13 @@
                 {{ session('message') }}
             </div>
         @endif
-        <form action="{{ route('crews.store') }}" method="post">
+        <form action="{{ route('crews.store') }}" method="post" enctype="multipart/form-data">
             @csrf
+            <div>
+                <x-input-label for="role" :value="__('Role')" />
+                <x-text-input  id="role" class="block mt-1 w-full" type="text" name="role" :value="old('role')" required autofocus />
+                <x-input-error :messages="$errors->get('role')" class="mt-2" />
+            </div>
             <!-- Titre -->
             <div>
                 <x-input-label for="title" :value="__('Title')" />
@@ -27,7 +32,7 @@
             </div>
             <div class="row mb-3">
                 <x-input-label for="image_path" :value="__('Crew Pic')" />
-                <x-text-input  id="image_path" class="block mt-1 w-full" type="file" name="image_path" :value="old('image_path')" required autofocus />
+                <x-text-input  id="image_path" class="block mt-1 w-full" type="file" name="image_path"required autofocus />
                 <x-input-error :messages="$errors->get('image_path')" class="mt-2" />
             </div>
             <div class="flex items-center justify-end mt-4">

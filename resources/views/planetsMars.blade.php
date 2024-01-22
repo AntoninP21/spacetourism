@@ -1,3 +1,4 @@
+@use('App\Models\Planet')
 @extends('layouts.default')
 @section('content')
 <main class=main_planet>
@@ -33,7 +34,14 @@
                     <div class=box_nav_planet>    
                         TITAN
                     </div>    
-                </a>      
+                </a>
+                @foreach(Planet::all() as $planetItem)
+               <a href="{{route('planet',['locale'=>App::getLocale(),'planetName'=>$planetItem->title])}}">
+                    <div class=box_nav_planet>    
+                    {{ $planetItem->title }}
+                    </div>    
+               </a> 
+               @endforeach      
             </div>                
                <div class=titre_planet>
                   MARS

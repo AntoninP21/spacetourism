@@ -11,20 +11,20 @@
                 {{ session('message') }}
             </div>
         @endif
-        <form action="{{ route('technologies.update', $technologie->id) }}" method="post">
+        <form action="{{ route('technologies.update', $technology->id) }}" method="post" enctype="multipart/form-data">
             @csrf
             @method('put')
             <!-- Titre -->
             <div>
                 <x-input-label for="title" :value="__('Title')" />
-                <x-text-input id="title" class="block mt-1 w-full" type="text" name="title" :value="old('title', $technologie->title)" required autofocus />
+                <x-text-input id="title" class="block mt-1 w-full" type="text" name="title" :value="old('title', $technology->title)" required autofocus />
             
                 <x-input-error :messages="$errors->get('title')" class="mt-2" />
             </div>
             <!-- Détail -->
             <div class="mt-4">
                 <x-input-label for="detail" :value="__('Detail')" />
-                <x-textarea class="block mt-1 w-full" id="detail" name="detail">{{ old('detail', $technologie->detail) }}</x-textarea>
+                <x-textarea class="block mt-1 w-full" id="detail" name="detail">{{ old('detail', $technology->detail) }}</x-textarea>
                 
                 <x-input-error :messages="$errors->get('detail')" class="mt-2" />            
             </div>

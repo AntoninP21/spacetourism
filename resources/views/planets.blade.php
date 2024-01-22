@@ -14,7 +14,7 @@
             <div class=navigation_planets>
                 <!-- Navigation Links -->
                 <a href='{{route("moon",["locale"=>App::getLocale()])}}'>
-                    <div class=box_nav_planet_selected>
+                    <div class=box_nav_planet>
                        @lang('LUNE')
                     </div>               
                 </a>  
@@ -37,9 +37,15 @@
                 </a>      
                @foreach(Planet::all() as $planetItem)
                <a href="{{route('planet',['locale'=>App::getLocale(),'planetName'=>$planetItem->title])}}">
+                  @if(($planetItem->title)==($planet->title))
+                  <div class=box_nav_planet_selected>    
+                    {{ $planetItem->title }}
+                    </div> 
+                  @else
                     <div class=box_nav_planet>    
                     {{ $planetItem->title }}
-                    </div>    
+                    </div>  
+                  @endif  
                </a> 
                @endforeach
             </div>                

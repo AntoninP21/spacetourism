@@ -11,9 +11,15 @@
                 {{ session('message') }}
             </div>
         @endif
-        <form action="{{ route('crews.update', $crew->id) }}" method="post">
+        <form action="{{ route('crews.update', $crew->id) }}" method="post" enctype="multipart/form-data">
             @csrf
             @method('put')
+            <div>
+                <x-input-label for="role" :value="__('Role')" />
+                <x-text-input id="role" class="block mt-1 w-full" type="text" name="role" :value="old('role', $crew->role)" required autofocus />
+            
+                <x-input-error :messages="$errors->get('role')" class="mt-2" />
+            </div>
             <!-- Titre -->
             <div>
                 <x-input-label for="title" :value="__('Title')" />
@@ -27,18 +33,6 @@
                 <x-textarea class="block mt-1 w-full" id="detail" name="detail">{{ old('detail', $crew->detail) }}</x-textarea>
                 
                 <x-input-error :messages="$errors->get('detail')" class="mt-2" />            
-            </div>
-            <div class="mt-4">
-                <x-input-label for="distance" :value="__('distance')" />
-                <x-textarea class="block mt-1 w-full" id="distance" name="distance">{{ old('distance', $crew->distance) }}</x-textarea>
-                
-                <x-input-error :messages="$errors->get('distance')" class="mt-2" />            
-            </div>
-            <div class="mt-4">
-                <x-input-label for="duree" :value="__('duree')" />
-                <x-textarea class="block mt-1 w-full" id="duree" name="duree">{{ old('duree', $crew->duree) }}</x-textarea>
-                
-                <x-input-error :messages="$errors->get('duree')" class="mt-2" />            
             </div>
             <!-- Tâche accomplie -->
             <div class="mt-4">

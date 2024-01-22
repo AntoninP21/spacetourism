@@ -35,6 +35,7 @@ Route::group(['prefix' => '/{locale}', 'middleware' => 'language'],function () {
     Route::get('/technologie',[AffichageController::class,'technologie'])->name('technologie');
     Route::get('/technologie/page2',[AffichageController::class,'technologiePage2'])->name('technologiePage2');
     Route::get('/technologie/page3',[AffichageController::class,'technologiePage3'])->name('technologiePage3');
+    Route::get('/technologie/{technologieName}',[AffichageController::class,'technologieAutre'])->name('technologieAutre');
 });
 
 Route::get('/dashboard', function () {

@@ -11,7 +11,7 @@
                 {{ session('message') }}
             </div>
         @endif
-        <form action="{{ route('planets.update', $planet->id) }}" method="post">
+        <form action="{{ route('planets.update', $planet->id) }}" method="post" enctype="multipart/form-data">
             @csrf
             @method('put')
             <!-- Titre -->

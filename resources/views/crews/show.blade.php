@@ -5,6 +5,8 @@
         </h2>
     </x-slot>
     <x-planets-card>
+        <h3 class="font-semibold text-xl text-gray-800">@lang('Role')</h3>
+        <p>{{ $crew->role }}</p>
         <h3 class="font-semibold text-xl text-gray-800">@lang('Title')</h3>
         <p>{{ $crew->title }}</p>
         <h3 class="font-semibold text-xl text-gray-800 pt-2">@lang('Detail')</h3>

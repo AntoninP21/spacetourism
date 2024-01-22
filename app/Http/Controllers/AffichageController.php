@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App;
 use App\Models\Planet;
+use App\Models\Crew;
+use App\Models\Technologie;
+
+
 class AffichageController extends Controller
 {
     public function index()
@@ -18,11 +22,13 @@ class AffichageController extends Controller
     }
     public function equipages()
     {
-        return view('equipages',['body' => 'container_equipage']);
+        $crews = Crew::all();
+        return view('equipages',['body' => 'container_equipage'])->with('crews', $crews);
     }
     public function technologie()
     {
-        return view('technologieLanceur',['body' => 'container_technologie']);
+        $technologies = Technologie::all();
+        return view('technologieLanceur',['body' => 'container_technologie'])->with('technologies', $technologies);
     }
     public function mars()
     {
@@ -43,11 +49,18 @@ class AffichageController extends Controller
     }
     public function technologiePage2()
     {
-        return view('technologieSpatioport',['body' => 'container_technologie']);
+        $technologies = Technologie::all();
+        return view('technologieSpatioport',['body' => 'container_technologie'])->with('technologies', $technologies);
     }
     public function technologiePage3()
     {
-        return view('technologieCapsule',['body' => 'container_technologie']);
+        $technologies = Technologie::all();
+        return view('technologieCapsule',['body' => 'container_technologie'])->with('technologies', $technologies);
+    }
+    public function technologieAutre(Request $request)
+    {
+        $technologie = Technologie::where('title', '=', $request->technologieName)->firstOrFail();
+        return view('technologiesAutre', compact('technologie'),['body' => 'container_technologie']);
     }
     public function language(Request $request)
     {

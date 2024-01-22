@@ -10,6 +10,10 @@
     <label for="Slide3" id="s3"></label>
     <input type="radio" name="slide" class="control" id="Slide4" />
     <label for="Slide4" id="s4"></label>
+    @foreach($crews as $crew)
+    <input type="radio" name="slide" class="control" id="Slide4" />
+    <label for="Slide4" id="s4"></label>
+    @endforeach
     <div class="overflow-wrapper">
       <div class="slides"><div class="slide" href="">
 <div class=equipage1>
@@ -95,7 +99,30 @@
                      </div>
                   </div>
                </div>
-            </div>  
+            </div> 
+            @foreach($crews as $crew)
+            <div class="slide" href="">
+            <div class=equipage4>
+                  <div class=main_equipage>
+                     <div class=left_equipage>
+                        <div class=titre_equipe>
+                           <span class=numero>02</span>@lang("RENCONTREZ L'ÉQUIPAGE")
+                        </div>
+                        <div class=titre_equipage>
+                        @lang("$crew->role")
+                        </div>
+                        <div class=nom_equipage>
+                        @lang("$crew->title")
+                        </div>
+                        <div class=corps_equipage>
+                        @lang("$crew->detail")</div>
+                     <div class=right_equipage>
+                        <img src="data:image/png;base64,{{ $crew->image_path }}" alt="{{ $crew->title }}">
+                     </div>
+                  </div>
+               </div>
+            </div> 
+            @endforeach 
          </div>
       </div>
     </div>

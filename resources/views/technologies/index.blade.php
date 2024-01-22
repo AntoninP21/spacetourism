@@ -19,20 +19,20 @@
                     </tr>
                   </thead>
                   <tbody class="bg-white">
-                    @foreach($technologies as $technologie)
+                    @foreach($technologies as $technology)
                       <tr class="whitespace-nowrap">
-                        <td class="px-4 py-4 text-sm text-gray-500">{{ $technologie->id }}</td>
-                        <td class="px-4 py-4">{{ $technologie->title }}</td>
-                        <x-link-button href="{{ route('technologies.show', $technologie->id) }}">
+                        <td class="px-4 py-4 text-sm text-gray-500">{{ $technology->id }}</td>
+                        <td class="px-4 py-4">{{ $technology->title }}</td>
+                        <x-link-button href="{{ route('technologies.show', $technology->id) }}">
                             @lang('Show')
                         </x-link-button>
-                        <x-link-button href="{{ route('technologies.edit', $technologie->id) }}">
+                        <x-link-button href="{{ route('technologies.edit', $technology->id) }}">
                             @lang('edit')
                         </x-link-button>
-                        <x-link-button onclick="event.preventDefault(); document.getElementById('destroy{{ $technologie->id }}').submit();">
+                        <x-link-button onclick="event.preventDefault(); document.getElementById('destroy{{ $technology->id }}').submit();">
                             @lang('Delete')
                         </x-link-button>
-                        <form id="destroy{{ $technologie->id }}" action="{{ route('technologies.destroy', $technologie->id) }}" method="POST" style="display: none;">
+                        <form id="destroy{{ $technology->id }}" action="{{ route('technologies.destroy', $technology->id) }}" method="POST" style="display: none;">
                             @csrf
                             @method('DELETE')
                         </form>

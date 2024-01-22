@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Technologie;
+use App\Http\Controllers\Input;
 class TechnologieController extends Controller
     {
         /**
@@ -32,52 +33,64 @@ class TechnologieController extends Controller
             'title' => 'required|max:100',
             'detail' => 'required|max:500',
         ]);
-        $technologie = new Technologie;
-        $technologie->title = $request->title;
-        $technologie->detail = $request->detail;
-        $technologie->image_path = $request->image_path;
-        $technologie->save();
-        return back()->with('message', "The technologie has been created!");
+        $technology = new Technologie;
+        $technology->title = $request->title;
+        $technology->detail = $request->detail;
+        if ($request->hasFile('image_path')) {
+            // Read the contents of the image file and encode it to base64
+            $imageContents = file_get_contents($request->file('image_path')->path());
+            $base64Image = base64_encode($imageContents);
+    
+            $technology->image_path = $base64Image;
+        }
+        $technology->save();
+        return back()->with('message', "The technology has been created!");
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Technologie $technologie)
+    public function show(Technologie $technology)
     {
-        return view('technologies.show', compact('technologie'));
+        return view('technologies.show', compact('technology'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Technologie $technologie)
+    public function edit(Technologie $technology)
     {
-        return view('technologies.edit', compact('technologie'));
+        return view('technologies.edit', compact('technology'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Technologie $technologie)
+    public function update(Request $request, Technologie $technology)
     {
         $data = $request->validate([
             'title' => 'required|max:100',
             'detail' => 'required|max:500',
         ]);
-        $technologie->title = $request->title;
-        $technologie->detail = $request->detail;
-        $technologie->image_path = $request->image_path;
-        $technologie->save();
+        $technology->title = $request->title;
+        $technology->detail = $request->detail;
+        if ($request->hasFile('image_path')) {
+            // Read the contents of the image file and encode it to base64
+            $imageContents = file_get_contents($request->file('image_path')->path());
+            $base64Image = base64_encode($imageContents);
+    
+            $technology->image_path = $base64Image;
+        }
+        $technology->save();
         return back()->with('message', "The technologie has been edited!");     
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Technologie $technologie)
+    public function destroy(Technologie $technology)
     {
-        $technologie->delete();
-        return view("/dashboard");
+        $technology->delete();
+        return back();
     }
 }

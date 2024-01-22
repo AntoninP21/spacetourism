@@ -10,6 +10,7 @@ class Crew extends Model
     use HasFactory;
     protected $fillable = [
         'id',
+        'role',
         'title',
         'detail',
         'image_path',

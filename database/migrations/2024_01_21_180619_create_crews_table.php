@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('crews', function (Blueprint $table) {
             $table->id();
+            $table->string('role');
             $table->string('title');
             $table->string('detail');
-            $table->binary('image_path')->nullable();
+            $table->longText('image_path')->nullable();
             $table->timestamps();
         });
     }

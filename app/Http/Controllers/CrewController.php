@@ -32,12 +32,19 @@ class CrewController extends Controller
             'title' => 'required|max:100',
             'detail' => 'required|max:500',
         ]);
-        $crew = new crew;
+        $crew = new Crew;
+        $crew->role = $request->role;
         $crew->title = $request->title;
         $crew->detail = $request->detail;
-        $crew->image_path = $request->image_path;
+        if ($request->hasFile('image_path')) {
+            // Read the contents of the image file and encode it to base64
+            $imageContents = file_get_contents($request->file('image_path')->path());
+            $base64Image = base64_encode($imageContents);
+    
+            $crew->image_path = $base64Image;
+        }
         $crew->save();
-        return back()->with('message', "The crew has been created!");
+        return back()->with('message', "The planet has been created!");
     }
 
     /**
@@ -65,9 +72,16 @@ class CrewController extends Controller
             'title' => 'required|max:100',
             'detail' => 'required|max:500',
         ]);
+        $crew->role = $request->role;
         $crew->title = $request->title;
         $crew->detail = $request->detail;
-        $crew->image_path = $request->image_path;
+        if ($request->hasFile('image_path')) {
+            // Read the contents of the image file and encode it to base64
+            $imageContents = file_get_contents($request->file('image_path')->path());
+            $base64Image = base64_encode($imageContents);
+    
+            $crew->image_path = $base64Image;
+        }
         $crew->save();
         return back()->with('message', "The crew has been edited!");     
     }
