@@ -45,7 +45,7 @@ class AffichageController extends Controller
     public function planet(Request $request)
     {
         $planet = Planet::where('title', '=', $request->planetName)->firstOrFail();
-        return view('planets', compact('planet'),['body' => 'container_technologie']);
+        return view('planets', compact('planet'),['body' => 'container_planet']);
     }
     public function technologiePage2()
     {
