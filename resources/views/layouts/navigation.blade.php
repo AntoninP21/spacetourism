@@ -1,53 +1,108 @@
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
-
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Back-Office') }}
                     </x-nav-link>
                 </div>
-                <!-- Lien pour la création d'une tâche -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('planets.create')" :active="request()->routeIs('planets.create')">
-                        {{ __('Create a planet') }}
-                    </x-nav-link>
-                </div>
-                    <!-- Lien pour la liste des tâches -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('planets.index')" :active="request()->routeIs('planets.index')">
-                        {{ __('Planets list') }}
-                    </x-nav-link>
-                </div>
-                <!-- Lien pour la création d'une tâche -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-20 sm:flex">
-                    <x-nav-link :href="route('crews.create')" :active="request()->routeIs('crews.create')">
-                        {{ __('Create a crew') }}
-                    </x-nav-link>
-                </div>
-                    <!-- Lien pour la liste des tâches -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('crews.index')" :active="request()->routeIs('crews.index')">
-                        {{ __('Crew list') }}
-                    </x-nav-link>
-                </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-20 sm:flex">
-                    <x-nav-link :href="route('technologies.create')" :active="request()->routeIs('technologies.create')">
-                        {{ __('Create a technologie') }}
-                    </x-nav-link>
-                </div>
-                    <!-- Lien pour la liste des tâches -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('technologies.index')" :active="request()->routeIs('technologies.index')">
-                        {{ __('Technologie list') }}
-                    </x-nav-link>
-                </div>
-            </div>
-
+                <div
+	                class='h-full w-full flex justify-center items-center'>
+	                <div class='relative'>
+	                	<button class="bg-gray-600 p-2 font-bold text-gray-100 rounded-md peer focus:bg-gray-400 focus:text-gray-200 transition-all duration-200  ">Planets</button>
+	                	<div class=' w-40 absolute top-5 z-10
+	                	after:content-[""] after:inline-block after:absolute after:top-0 after:bg-white/40
+	                	after:w-full after:h-full after:-z-20 after:blur-[2px] after:rounded-lg
+                    peer-focus:top-12 peer-focus:opacity-100 peer-focus:visible 
+                    transition-all duration-300 invisible  opacity-0 
+                    '>
+			<ul class='py-6 px-3 flex flex-col gap-3'>
+				<li class='cursor-pointer bg-gray-600 p-3 rounded-md hover:opacity-90 text-white'>
+                <x-nav-link class="text-white hover:text-white " :href="route('planets.create')" :active="request()->routeIs('planets.create')">
+                    <div class=" sm:flex">
+                        {{ __('Create a planet') }}                 
+                    </div>
+                </x-nav-link>
+                </li>
+				<li class='cursor-pointer bg-gray-600 p-3 rounded-md hover:opacity-90 text-white'>
+                <x-nav-link class="text-white hover:text-white " :href="route('planets.index')" :active="request()->routeIs('planets.index')">
+                    <div class=" sm:flex">
+                    {{ __('Planets list') }}                 
+                    </div>
+                </x-nav-link>
+                </li>	
+			</ul>
+		</div>
+	</div>
+</div>
+</div>
+<div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div
+	                class='h-full w-full flex justify-center items-center'>
+	                <div class='relative'>
+	                	<button class="bg-gray-600 p-2 font-bold text-gray-100 rounded-md peer focus:bg-gray-400 focus:text-gray-200 transition-all duration-200  ">Crew</button>
+	                	<div class=' w-40 absolute top-5 z-10
+	                	after:content-[""] after:inline-block after:absolute after:top-0 after:bg-white/40
+	                	after:w-full after:h-full after:-z-20 after:blur-[2px] after:rounded-lg
+                    peer-focus:top-12 peer-focus:opacity-100 peer-focus:visible 
+                    transition-all duration-300 invisible  opacity-0 
+                    '>
+			<ul class='py-6 px-3 flex flex-col gap-3'>
+				<li class='cursor-pointer bg-gray-600 p-3 rounded-md hover:opacity-90 text-white'>
+                <x-nav-link class="text-white hover:text-white " :href="route('crews.create')" :active="request()->routeIs('crews.create')">
+                    <div class=" sm:flex">
+                    {{ __('Create a crew') }}                 
+                    </div>
+                </x-nav-link>
+                </li>
+				<li class='cursor-pointer bg-gray-600 p-3 rounded-md hover:opacity-90 text-white'>
+                <x-nav-link class="text-white hover:text-white " :href="route('crews.index')" :active="request()->routeIs('crews.index')">
+                    <div class=" sm:flex">
+                    {{ __('Crew list') }}                 
+                    </div>
+                </x-nav-link>
+                </li>	
+			</ul>
+		</div>
+	</div>
+</div>
+</div>
+<div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div
+	                class='h-full w-full flex justify-center items-center'>
+	                <div class='relative'>
+	                	<button class="bg-gray-600 p-2 font-bold text-gray-100 rounded-md peer focus:bg-gray-400 focus:text-gray-200 transition-all duration-200  ">Technologies</button>
+	                	<div class=' w-40 absolute top-5 z-10
+	                	after:content-[""] after:inline-block after:absolute after:top-0 after:bg-white/40
+	                	after:w-full after:h-full after:-z-20 after:blur-[2px] after:rounded-lg
+                    peer-focus:top-12 peer-focus:opacity-100 peer-focus:visible 
+                    transition-all duration-300 invisible  opacity-0 
+                    '>
+			<ul class='py-6 px-3 flex flex-col gap-3'>
+				<li class='cursor-pointer bg-gray-600 p-3 rounded-md hover:opacity-90 text-white'>
+                <x-nav-link class="text-white hover:text-white " :href="route('technologies.create')" :active="request()->routeIs('technologies.create')">
+                    <div class=" sm:flex">
+                    {{ __('Create a technologie') }}                
+                    </div>
+                </x-nav-link>
+                </li>
+				<li class='cursor-pointer bg-gray-600 p-3 rounded-md hover:opacity-90 text-white'>
+                <x-nav-link class="text-white hover:text-white " :href="route('technologies.index')" :active="request()->routeIs('technologies.index')">
+                    <div class=" sm:flex">
+                    {{ __('Technologie list') }}                 
+                    </div>
+                </x-nav-link>
+                </li>	
+			</ul>
+		</div>
+	</div>
+</div>
+</div>
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <x-dropdown align="right" width="48">
