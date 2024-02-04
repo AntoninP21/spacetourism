@@ -11,7 +11,7 @@
                 {{ session('message') }}
             </div>
         @endif
-        <form action="{{ route('planets.store') }}" method="post" enctype="multipart/form-data">
+        <form id=formulaire action="{{ route('planets.store') }}" method="post" enctype="multipart/form-data">
             @csrf
             <!-- Titre -->
             <div>
@@ -43,10 +43,35 @@
                 <x-input-error :messages="$errors->get('image_path')" class="mt-2" />
             </div>
             <div class="flex items-center justify-end mt-4">
-                <x-primary-button class="ml-3">
+                <x-primary-button id="buttonSend" class="ml-3">
                     {{ __('Send') }}
                 </x-primary-button>
             </div>
         </form>
     </x-planets-card>
 </x-app-layout>
+<script>
+    let buttonSend = document.getElementById("buttonSend")
+    let formulaire = document.getElementById("formulaire")
+    let data = new FormData(formulaire)
+    let planetData = {}
+
+    buttonSend.addEventListener("onclick", async(e)=>{
+        e.preventDefault()
+        for (const [key, value] of data) {
+            planetData[key]=value
+        }
+        planetData = JSON.stringify(planetData)
+        const response = await fetch(formulaire.action,{
+            method:"POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: planetData
+        })
+        if (response.status=200){
+            window.location.href = "http://spacetourism.test/planets"
+        }
+    })
+    
+</script>
