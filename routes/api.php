@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\API\PlanetAPIController;
+use App\Http\Controllers\API\CrewAPIController;
+use App\Http\Controllers\API\TechnologieAPIController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,6 +23,22 @@ Route::group(['prefix' => '/planet'],function () {
     Route::put('/{id}', [PlanetAPIController::class, 'update']);
     Route::delete('/{id}', [PlanetAPIController::class, 'destroy']);
 });
+
+Route::group(['prefix' => '/crew'],function () {
+    Route::get('/', [CrewAPIController::class, 'index'])->name('index');
+    Route::get('/{id}', [CrewAPIController::class, 'show']);
+    Route::post('/', [CrewAPIController::class, 'store']);
+    Route::put('/{id}', [CrewAPIController::class, 'update']);
+    Route::delete('/{id}', [CrewAPIController::class, 'destroy']);
+});
+Route::group(['prefix' => '/technologie'],function () {
+    Route::get('/', [TechnologieAPIController::class, 'index'])->name('index');
+    Route::get('/{id}', [TechnologieAPIController::class, 'show']);
+    Route::post('/', [TechnologieAPIController::class, 'store']);
+    Route::put('/{id}', [TechnologieAPIController::class, 'update']);
+    Route::delete('/{id}', [TechnologieAPIController::class, 'destroy']);
+});
+
 Route::group(['prefix' => '/crew'],function () {
     Route::get('/index', [PlanetAPIController::class, 'index']);
 });   
