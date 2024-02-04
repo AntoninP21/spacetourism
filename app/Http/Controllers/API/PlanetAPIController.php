@@ -38,7 +38,7 @@ class PlanetAPIController extends Controller
         $data = $request->input();
     
         $rules = [
-            'title' => 'required|max:20', //Must be a number and length of value is 8
+            'title' => 'required|max:20', 
             'detail' => 'required|max:300',
             'distance' => 'required|max:30',
             'duree' => 'required|max:30'
@@ -82,16 +82,33 @@ class PlanetAPIController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Planet $planet)
+    public function update(Request $request, Planet $planet, $id)
     {
-        //
+        $data = $request->validate([
+            'title' => 'required|max:100',
+            'detail' => 'required|max:500',
+        ]);
+        $planet = Planet::where("id",$id)->firstOrFail();
+        $planet->title = $request->title;
+        $planet->detail = $request->detail;
+        $planet->distance = $request->distance;
+        $planet->duree = $request->duree;
+        if ($request->hasFile('image_path')) {
+            // Read the contents of the image file and encode it to base64
+            $imageContents = file_get_contents($request->file('image_path')->path());
+            $base64Image = base64_encode($imageContents);
+    
+            $planet->image_path = $base64Image;
+        }
+        $planet->save();    
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Planet $planet)
+    public function destroy($id)
     {
-        //
+        $planet = Planet::where("id",$id)->firstOrFail();
+        $planet->delete();
     }
 }

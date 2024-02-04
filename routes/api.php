@@ -15,10 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::group(['prefix' => '/planet'],function () {
-    Route::get('/', [PlanetAPIController::class, 'index']);
+    Route::get('/', [PlanetAPIController::class, 'index'])->name('index');
     Route::get('/{id}', [PlanetAPIController::class, 'show']);
     Route::post('/', [PlanetAPIController::class, 'store']);
-    Route::get('/create', [PlanetAPIController::class, 'create']);
+    Route::put('/{id}', [PlanetAPIController::class, 'update']);
+    Route::delete('/{id}', [PlanetAPIController::class, 'destroy']);
 });
 Route::group(['prefix' => '/crew'],function () {
     Route::get('/index', [PlanetAPIController::class, 'index']);
