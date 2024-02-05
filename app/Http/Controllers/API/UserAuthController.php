@@ -62,7 +62,7 @@ class UserAuthController extends Controller
     /**
      * Delete the user's account.
      */
-    public function destroy(Request $request)
+    public function logout(Request $request)
     {
         $request->validateWithBag('userDeletion', [
             'password' => ['required', 'current_password'],
