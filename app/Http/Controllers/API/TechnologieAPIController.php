@@ -52,9 +52,11 @@ class TechnologieAPIController extends Controller
             $technologie->image_path = $data["image_path"];
 
             $technologie->save();
+            return response()->json(['Success' => 'Technology created !'], 200);
         } else {
             //TODO Handle your error
-            dd($validator->errors()->all());
+            return response()->json(['Error' => 'Something wrong happened, be sure to check your request !'], 401);
+
         }
     }
 
@@ -99,6 +101,8 @@ class TechnologieAPIController extends Controller
             $technologie->image_path = $base64Image;
         }
         $technologie->save();    
+        return response()->json(['Success' => 'Technology edited !'], 200);
+
     }
 
     /**
@@ -108,5 +112,7 @@ class TechnologieAPIController extends Controller
     {
         $technologie = Technologie::where("id",$id)->firstOrFail();
         $technologie->delete();
+        return response()->json(['Success' => 'Technology deleted !'], 200);
+
     }
 }

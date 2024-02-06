@@ -52,9 +52,12 @@ class CrewAPIController extends Controller
             $crew->image_path = $data["image_path"];
 
             $crew->save();
+            return response()->json(['Success' => 'Crew created !'], 200);
+
         } else {
             //TODO Handle your error
-            dd($validator->errors()->all());
+            return response()->json(['Error' => 'Something wrong happened, be sure to check your request !'], 401);
+
         }
     }
 
@@ -99,6 +102,8 @@ class CrewAPIController extends Controller
             $crew->image_path = $base64Image;
         }
         $crew->save();    
+        return response()->json(['Success' => 'Crew edited !'], 200);
+
     }
 
     /**
@@ -108,5 +113,7 @@ class CrewAPIController extends Controller
     {
         $crew = Crew::where("id",$id)->firstOrFail();
         $crew->delete();
+        return response()->json(['Success' => 'Crew deleted!'], 200);
+
     }
 }

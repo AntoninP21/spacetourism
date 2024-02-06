@@ -43,9 +43,10 @@ class PlanetAPIController extends Controller
             'distance' => 'required|max:30',
             'duree' => 'required|max:30'
         ];
-    
+
         $validator = Validator::make($data, $rules);
         if ($validator->passes()) {
+            
             $planet = new Planet;
             $planet->title = $data["title"];
             $planet->detail = $data["detail"];
@@ -54,9 +55,10 @@ class PlanetAPIController extends Controller
             $planet->image_path = $data["image_path"];
 
             $planet->save();
+            return response()->json(['Success' => 'Planet created !'], 200);
         } else {
             //TODO Handle your error
-            dd($validator->errors()->all());
+            return response()->json(['Error' => 'Something wrong happened, be sure to check your request !'], 401);
         }
     }
 
@@ -101,6 +103,7 @@ class PlanetAPIController extends Controller
             $planet->image_path = $base64Image;
         }
         $planet->save();    
+        return response()->json(['Success' => 'Planet edited !'], 200);
     }
 
     /**
@@ -110,5 +113,6 @@ class PlanetAPIController extends Controller
     {
         $planet = Planet::where("id",$id)->firstOrFail();
         $planet->delete();
+        return response()->json(['Success' => 'Planet deleted !'], 200);
     }
 }
