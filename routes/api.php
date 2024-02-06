@@ -17,31 +17,31 @@ use Illuminate\Http\Request;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-Route::middleware('auth.api')->group(function () {
+
     Route::group(['prefix' => '/planet'],function () {
         Route::get('/', [PlanetAPIController::class, 'index'])->name('index');
         Route::get('/{id}', [PlanetAPIController::class, 'show']);
-        Route::post('/', [PlanetAPIController::class, 'store']);
-        Route::put('/{id}', [PlanetAPIController::class, 'update']);
-        Route::delete('/{id}', [PlanetAPIController::class, 'destroy']);
+        Route::post('/', [PlanetAPIController::class, 'store'])->middleware('auth.api');
+        Route::put('/{id}', [PlanetAPIController::class, 'update'])->middleware('auth.api');
+        Route::delete('/{id}', [PlanetAPIController::class, 'destroy'])->middleware('auth.api');
     });
 
     Route::group(['prefix' => '/crew'],function () {
         Route::get('/', [CrewAPIController::class, 'index'])->name('index');
         Route::get('/{id}', [CrewAPIController::class, 'show']);
-        Route::post('/', [CrewAPIController::class, 'store']);
-        Route::put('/{id}', [CrewAPIController::class, 'update']);
-        Route::delete('/{id}', [CrewAPIController::class, 'destroy']);
+        Route::post('/', [CrewAPIController::class, 'store'])->middleware('auth.api');
+        Route::put('/{id}', [CrewAPIController::class, 'update'])->middleware('auth.api');
+        Route::delete('/{id}', [CrewAPIController::class, 'destroy'])->middleware('auth.api');
     });
     Route::group(['prefix' => '/technologie'],function () {
         Route::get('/', [TechnologieAPIController::class, 'index'])->name('index');
         Route::get('/{id}', [TechnologieAPIController::class, 'show']);
-        Route::post('/', [TechnologieAPIController::class, 'store']);
-        Route::put('/{id}', [TechnologieAPIController::class, 'update']);
-        Route::delete('/{id}', [TechnologieAPIController::class, 'destroy']);
+        Route::post('/', [TechnologieAPIController::class, 'store'])->middleware('auth.api');
+        Route::put('/{id}', [TechnologieAPIController::class, 'update'])->middleware('auth.api');
+        Route::delete('/{id}', [TechnologieAPIController::class, 'destroy'])->middleware('auth.api');
     });
 
-});
+
 Route::post('register',[UserAuthController::class,'register']);
 Route::post('login',[UserAuthController::class,'login']);
 Route::post('logout',[UserAuthController::class,'logout'])
