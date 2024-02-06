@@ -1,6 +1,6 @@
 ## Premier site créé en utilisant le framework Laravel
 
-Découverte du modèle MVC, des routes, des tests unitaires, des authentifications et des middlewares.
+Découverte du modèle MVC, des routes, des tests unitaires, des authentifications et des middlewares, ainsi que la création d'une API et la récuperation de ses données.
 
 Afin d'obtenir le code source du site:
 
