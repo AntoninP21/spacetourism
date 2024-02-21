@@ -3,14 +3,52 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Requests\ProfileUpdateRequest;
-
+use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\User;
+use Illuminate\Support\Facades\Response;
 
 class UserAuthController extends Controller
 {
+    public function index()
+    {
+        $users = User::all();
+        return response()->json(
+            $users
+        );
+    }
+    public function store(Request $request)
+    {
+        $data = $request;
+            $user = new User;
+            $user->name = $data["name"];
+            $user->email = $data["email"];
+            $user->password = $data["password"];
+           
+            $user->save();
+            return response()->json(['Success' => 'User created !'], 200);
+        
+    }
+    public function update(Request $request, User $user, $id)
+    {
+        $user = User::where("id",$id)->firstOrFail();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = $request->password;
+
+        $user->save();    
+        return response()->json(['Success' => 'User edited !'], 200);
+
+    }
+    public function destroy($id)
+    {
+        $user = User::where("id",$id)->firstOrFail();
+        $user->delete();
+        return response()->json(['Success' => 'User deleted !'], 200);
+
+    }
     public function login(Request $request){
         $loginUserData = $request->validate([
             'email'=>'required|string|email',
@@ -47,17 +85,7 @@ class UserAuthController extends Controller
     /**
      * Update the user's profile information.
      */
-    public function update(ProfileUpdateRequest $request)
-    {
-        $request->user()->fill($request->validated());
-
-        if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
-        }
-
-        $request->user()->save();
-
-    }
+    
 
     /**
      * Delete the user's account.
@@ -78,4 +106,18 @@ class UserAuthController extends Controller
         $request->session()->regenerateToken();
 
     }
+
+public function sendKeyToClient()
+{
+    if (!session()->has('user_key')) {
+        // Générer une nouvelle clé seulement si elle n'existe pas déjà
+        $key = Str::random(23);
+        // Stocker la clé dans la session de l'utilisateur
+        session(['user_key' => $key]);
+    } else {
+        // Récupérer la clé existante depuis la session de l'utilisateur
+        $key = session('user_key');
+    }
+    return Response::json(['key' => $key]);
+}
 }

@@ -35,18 +35,9 @@ class PlanetAPIController extends Controller
     public function store(Request $request)
     {
         
-        $data = $request->input();
-    
-        $rules = [
-            'title' => 'required|max:20', 
-            'detail' => 'required|max:300',
-            'distance' => 'required|max:30',
-            'duree' => 'required|max:30'
-        ];
+        $data = $request;
 
-        $validator = Validator::make($data, $rules);
-        if ($validator->passes()) {
-            
+        
             $planet = new Planet;
             $planet->title = $data["title"];
             $planet->detail = $data["detail"];
@@ -56,10 +47,6 @@ class PlanetAPIController extends Controller
 
             $planet->save();
             return response()->json(['Success' => 'Planet created !'], 200);
-        } else {
-            //TODO Handle your error
-            return response()->json(['Error' => 'Something wrong happened, be sure to check your request !'], 401);
-        }
     }
 
     /**

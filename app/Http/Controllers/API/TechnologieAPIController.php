@@ -33,7 +33,7 @@ class TechnologieAPIController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->input();
+        $data = $request;
     
         $rules = [
             'title' => 'required|max:20', 
